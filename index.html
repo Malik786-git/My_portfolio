@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- div animation css link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>&#60;MALIK | CODER🔥/&#62;</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rakkas&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), color-stop(#0a0307), color-stop(#0e0611), color-stop(#0e0b18), to(#07111f));
+  background-image: linear-gradient(to right bottom, #000000, #0a0307, #0e0611, #0e0b18, #07111f);
+}
+
+::-moz-selection {
+  background-color: #f9cf04;
+  color: black;
+}
+
+::selection {
+  background-color: #f9cf04;
+  color: black;
+}
+
+h3::-moz-selection {
+  background-color: #000000;
+  color: white;
+}
+
+h3::selection {
+  background-color: #000000;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), color-stop(#0a0307), color-stop(#0e0611), color-stop(#0e0b18), to(#07111f));
+  background-image: linear-gradient(to right bottom, #000000, #0a0307, #0e0611, #0e0b18, #07111f);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2c028;
+}
+
+.cursor {
+  height: 30px;
+  width: 30px;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f9cf04), color-stop(#fead00), color-stop(#ff8700), color-stop(#ff5b00), to(#fd0202));
+  background-image: linear-gradient(to right bottom, #f9cf04, #fead00, #ff8700, #ff5b00, #fd0202);
+  position: fixed;
+  border-radius: 50%;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), color-stop(#0a0307), color-stop(#0e0611), color-stop(#0e0b18), to(#07111f));
+  background-image: linear-gradient(to right bottom, #000000, #0a0307, #0e0611, #0e0b18, #07111f);
+}
+
+.loader_circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-animation: load 0.5s linear infinite;
+          animation: load 0.5s linear infinite;
+}
+
+@-webkit-keyframes load {
+  0% {
+    border-left: 4px solid #ee0b0b;
+  }
+  25% {
+    border-top: 4px solid #f10bf1;
+  }
+  50% {
+    border-right: 4px solid #1fc72d;
+  }
+  100% {
+    border-bottom: 4px solid white;
+  }
+}
+
+@keyframes load {
+  0% {
+    border-left: 4px solid #ee0b0b;
+  }
+  25% {
+    border-top: 4px solid #f10bf1;
+  }
+  50% {
+    border-right: 4px solid #1fc72d;
+  }
+  100% {
+    border-bottom: 4px solid white;
+  }
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #e2c028;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #0e0611;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#myBtn:hover {
+  background-color: #0f0f0f;
+  color: #e2c028;
+  border: 1px solid #e2c028;
+}
+
+.scrollDownBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 10%;
+  height: 40px;
+  width: 140px;
+  text-align: center;
+  -webkit-animation: MoveUpDown 2s linear infinite;
+          animation: MoveUpDown 2s linear infinite;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e2c028), color-stop(50%, transparent));
+  background: linear-gradient(to right, #e2c028 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border: 2px solid #e2c028;
+  border-radius: 3px;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  margin-left: 10px;
+}
+
+.scrollDownBtn:hover {
+  background-position: left bottom;
+}
+
+@-webkit-keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+}
+
+#scroll-2 {
+  left: 25%;
+}
+
+#scroll-3 {
+  left: 40%;
+}
+
+.scrollDownBtn i {
+  font-size: 20px;
+  line-height: 35px;
+  color: #e2c028;
+}
+
+.scrollDownBtn:hover i {
+  color: #0f0f0f;
+}
+
+.nav_text {
+  font-size: 17px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Header_Section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-link i {
+  font-size: 1.5rem;
+  color: #e2c028 !important;
+}
+
+.nav-link i:hover {
+  color: #fafafa !important;
+}
+
+.headline {
+  color: white;
+}
+
+.header_content_One {
+  height: 40vh;
+  width: 100%;
+  text-align: left;
+  padding-top: 50px;
+}
+
+.header_content_One h1 {
+  color: transparent;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #e2c028;
+}
+
+.header_content_Two {
+  height: 35vh;
+  width: 100%;
+  text-align: right;
+  padding-top: 120px;
+}
+
+.header_content_Two p {
+  font-family: 'Caveat', cursive;
+  letter-spacing: 1px;
+}
+
+.MyWork {
+  width: 100vw;
+}
+
+.MyWork h1 {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+
+.card {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px auto;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
+  background: #e2c028;
+  overflow: hidden;
+}
+
+.card .card_content {
+  padding: 10px;
+  text-align: center;
+}
+
+.card .card_content h2 {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  font-size: 40px;
+  font-weight: 800;
+  z-index: 1;
+  opacity: 0.1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card:hover .card_content h2 {
+  opacity: 1;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.card .card_content h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 25px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card .card_content a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  background: #000000;
+  color: #e9e9e9;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.card span {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card:hover span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#000000));
+  background: linear-gradient(to right, transparent, #000000);
+  -webkit-animation: animate1 2s linear infinite;
+          animation: animate1 2s linear infinite;
+}
+
+@-webkit-keyframes animate1 {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.card:hover span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#000000));
+  background: linear-gradient(to bottom, transparent, #000000);
+  -webkit-animation: animate2 2s linear infinite;
+          animation: animate2 2s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes animate2 {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+.card:hover span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#000000));
+  background: linear-gradient(to left, transparent, #000000);
+  -webkit-animation: animate3 2s linear infinite;
+          animation: animate3 2s linear infinite;
+}
+
+@-webkit-keyframes animate3 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+.card:hover span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#000000));
+  background: linear-gradient(to top, transparent, #000000);
+  -webkit-animation: animate4 2s linear infinite;
+          animation: animate4 2s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes animate4 {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+.About_Section {
+  margin-top: 50px !important;
+}
+
+.About_Section_Content {
+  padding-top: 100px;
+}
+
+.About_Section p {
+  margin-top: 10px;
+  text-align: left;
+  color: #e2c028;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.About_Section h1 {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+
+.About_Section img {
+  max-width: 350px;
+  border-radius: 50%;
+  border: 5px solid #e2c028;
+  opacity: 0.9;
+}
+
+.Contact_Section {
+  margin-top: 50px !important;
+  min-height: 50vh;
+  padding-top: 50px;
+}
+
+.Contact_Section h1 {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+
+.form-control {
+  background: transparent;
+  border-radius: 0 !important;
+  border: none;
+  border-bottom: 1px solid #e2c028;
+}
+
+.submit button {
+  font-weight: 600 !important;
+}
+
+footer {
+  padding: 50px 0;
+  border-top: 5px solid #e2c028;
+  background: #030303;
+}
+
+.footer_list ul li {
+  list-style: none;
+  font-size: 13px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.footer_list ul li:nth-child(1) {
+  font-weight: 800;
+}
+
+.copyright img {
+  height: 3rem;
+  width: 15rem;
+}
+
+.copyright p {
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+.SOCIAL {
+  font-size: 1.2rem;
+  padding-right: 5px;
+  color: #FFC107;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .scrollDownBtn {
+    left: 20%;
+  }
+  #scroll-2 {
+    left: 40%;
+  }
+  #scroll-3 {
+    left: 60%;
+  }
+  .About_Section{
+    padding-top: 20px;
+  }
+  .About_Section_Content {
+    padding-top: 10px;
+  }
+  
+  .About_Section p {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .About_Section img {
+    max-width: 350px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+  .header_content_One {
+    text-align: center;
+    padding-top: 100px;
+  }
+  .header_content_One h1 {
+    font-size: 50px;
+  }
+  .header_content_Two {
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+  }
+  .header_content_Two p {
+    font-family: 'Caveat', cursive;
+    letter-spacing: 1px;
+  }
+  .scrollDownBtn {
+    left: 10%;
+  }
+  #scroll-2 {
+    left: 40%;
+  }
+  #scroll-3 {
+    left: 70%;
+  }
+  .About_Section img {
+    margin-top: 50px;
+    max-width: 300px;
+  }
+  #myBtn {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 70%;
+  }
+  .header_content_One h1 {
+    font-size: 40px;
+  }
+  .scrollDownBtn {
+    left: 5%;
+    height: 35px;
+    width: 90px;
+  }
+  #scroll-2 {
+    left: 35%;
+  }
+  #scroll-3 {
+    left: 65%;
+  }
+  .scrollDownBtn i {
+    font-size: 17px;
+    line-height: 35px;
+    color: #e2c028;
+  }
+  .scrollDownBtn:hover i {
+    color: #0f0f0f;
+  }
+  .nav_text {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .About_Section img {
+    max-width: 250px;
+  }
+  #myBtn {
+    padding: 5px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
+    </style>
+</head>
+
+<body onload="Perloader();">
+    <div class="wrapped">
+
+
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- Pre Loader -->
+        <div id="loader">
+            <div class="loader_circle"></div>
+        </div>
+        <!-- ScrollUp btn -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- Header Section -->
+        <header class="container-fluid Header_Section">
+            <!-- NAVBAR -->
+            <div class="row">
+                <div class="col-md-11 mx-auto">
+                    <nav class="navbar navbar-expand navbar-dark" data-aos="fade-right">
+                        <a class="navbar-brand" href="index.html">&#60;MALIK THE CODER🔥/&#62;</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://github.com/Malik786-git" target="_blank"><i
+                                            class="fa fa-github-square" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="https://www.linkedin.com/in/malik-muhammad-jahangir-7987901b7/"
+                                        target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.facebook.com/profile.php?id=100011416972009"
+                                        target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                    <marquee class="headline" behavior="scroll" direction="left">⚡ Are you looking for Convert PSD to
+                        HTML.😎 I will convert Your PSD, Xd, Figma & Images into HTML5.✔ 100% Satisfaction Guarantee...
+                    </marquee>
+                </div>
+            </div>
+            <div class="container-fluid" data-aos="fade-left">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <div class="header_content_One ml-lg-5">
+                            <h1>Hello, I'm..<br>Malik M Jahangir.. <br>
+                                Convert PSD To HTML
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-12 mx-auto">
+                        <div class="ScrollDown">
+                            <div class="scrollDownBtn" id="scroll-1">
+                                <a href="#work"><i class="fa fa-briefcase" aria-hidden="true"><span class="nav_text">
+                                            Work</span> </i></a>
+
+                            </div>
+                            <div class="scrollDownBtn" id="scroll-2">
+                                <a href="#about"><i class="fa fa-info-circle" aria-hidden="true"><span class="nav_text">
+                                            About</span> </i></a>
+
+                            </div>
+                            <div class="scrollDownBtn" id="scroll-3">
+                                <a href="#contact"><i class="fa fa-phone-square" aria-hidden="true"><span
+                                            class="nav_text">
+                                            Contact</span> </i></a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="header_content_Two text-light">
+                            <p>I will convert Your PSD, Xd, Figma & Images into HTML <br>
+                                I'm using bootstrap4/5 for Responsive Design <br>
+                                Pexel Perfect | SaSS | Browser Compatable
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- MyWork Section -->
+        <section class="container-fluid MyWork" id="work">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <h1 class="py-3 text-center" data-aos="fade-left">Let's Check My Work </h1>
+                        <div class="row" data-aos="fade-up">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>01</h2>
+                                        <h3>Healthy Food</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+                                        <a href=" https://malik786-git.github.io/HealthyFood/" target="_blank">VIEW</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>02</h2>
+                                        <h3>Robo Meet</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+                                        <a href="https://malik786-git.github.io/RoboMeet/" target="_blank">VIEW</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>03</h2>
+                                        <h3>Udemy Header</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+                                        <a href="https://malik786-git.github.io/Udemy/" target="_blank">VIEW</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>04</h2>
+                                        <h3>Netflix Movie</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+
+                                        <a href="https://malik786-git.github.io/NetFlixMoviClone/"
+                                            target="_blank">VIEW</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>05</h2>
+                                        <h3>Boxing Header</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+
+                                        <a href="https://malik786-git.github.io/BoxingPage/" target="_blank">VIEW</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="card_content">
+                                        <h2>06</h2>
+                                        <h3>Gym Page</h3>
+                                        <p>Complete responsive webpade design. Used Html5, CSS3, Bootstrap4</p>
+
+                                        <a href="https://malik786-git.github.io/Gym-Template/">VIEW</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+
+
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- About -->
+        <section class="container About_Section mb-5" id="about">
+            <h1 class="py-3 text-center" data-aos="zoom-in">About Me</h1>
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div class="row mx-auto About_Section_Content">
+                        <div class="col-lg-6 mx-auto order-lg-1 order-2" data-aos="fade-right">
+                            <p>I have professionally to convert PSD, Xd, Figma
+                                Images, Ai to HTML5 responsive design
+                                and work on frontend technologies HTML5,
+                                CSS3 , CSS Preprocessors (Sass), Bootstrap4/5,
+                                Debugging, Javascript, Git(Version Control). <br>
+                                1. Responsive Code For Mobile, Tablet, Desktop, Landscap, Mode...<br>
+                                2. Clean & Hand Coded Code... <br>
+                                3. Browser Compatable<br>
+                                4. W3C Validation<br>
+                                5. Semantic Tags<br>
+                                6. Pixel Perfect
+
+                            </p>
+
+                        </div>
+                        <div class="col-lg-6 mx-auto order-lg-2 order-1">
+
+                            <figure class="mx-auto text-center" data-aos="fade-left">
+                                <img src="./assets/img/22140993_612941342429759_24300854061756081_n.jpg" alt="">
+                            </figure>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- Contact -->
+        <!-- validation Check and Send -->
+
+        <section class="container Contact_Section mb-5" id="contact" data-aos="zoom-in">
+            <h1 class="py-3 text-center">Contact Me</h1>
+            <div class="row text-light form">
+                <div class="col-md-8 mx-auto">
+                    <!-- form -->
+                    <form action="javascript:sendMessage()">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Robert" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="xyz@example.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Work with You"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Some text here!"
+                                required></textarea>
+                        </div>
+                        <div class="submit text-center">
+                            <button type="submit" class="btn btn-warning mb-2 text-center">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="row">
+
+            </div>
+        </section>
+      
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <!-- Footer -->
+
+        <footer class="container-fluid text-light">
+            <div class="row">
+                <div class="col-11 mx-auto">
+                    <div class="row">
+                        <div class="col-md-4 col-12 copyright">
+                            <figure>
+                                <a class="navbar-brand" href="index.html">&#60;MALIK THE CODER🔥/&#62;</a>
+
+                            </figure>
+                            <p>Work remotely with You<br>
+                                <u>Copyright</u> <i class="fa fa-copyright" aria-hidden="true"></i>
+                                <br> 2021 Malik | Coder
+                            </p>
+                            <div class="social_icon mt-md-5">
+
+                                <a href="https://github.com/Malik786-git" target="_blank"> <i
+                                        class="SOCIAL fa fa-github-square" aria-hidden="true"></i></a>
+
+
+                                <a href="https://www.facebook.com/profile.php?id=100011416972009" target="_blank"><i
+                                        class="SOCIAL fa fa-facebook-square" aria-hidden="true"></i></a>
+
+
+                                <a href="https://www.linkedin.com/in/malik-muhammad-jahangir-7987901b7/"
+                                    target="_blank"><i class="SOCIAL fa fa-linkedin-square" aria-hidden="true"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6 footer_list">
+                            <ul>
+                                <li><b>Convert HTMl From</b></li>
+                                <li><a href="">Figma</a></li>
+                                <li><a href="">Abode XD</a></li>
+                                <li><a href="">PSD / Ai</a></li>
+                                <li><a href="">Any Image/PDF</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-6 footer_list">
+                            <ul>
+                                <li><b>Skill's</b></li>
+                                <li><a href="#work">HTML5</a></li>
+                                <li><a href="#work">CSS3</a></li>
+                                <li><a href="#work">SaSS</a></li>
+                                <li><a href="#work">Bootstrap</a></li>
+                                <li><a href="#work">Javascript</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-6 footer_list">
+                            <ul>
+                                <li><b>SOCIAL</b></li>
+                                <li><a href="https://github.com/Malik786-git" target="_blank">github</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100011416972009"
+                                        target="_blank">facebook</a></li>
+                                <li><a href="https://www.linkedin.com/in/malik-muhammad-jahangir-7987901b7/"
+                                        target="_blank">linkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-6 footer_list">
+                            <ul>
+                                <li><b>CONTACT</b></li>
+                                <li><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        malikmuhammadjahangir786<br>@gmail.com</a></li>
+                                <li><a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i> +923102063864</a></li>
+                                <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i> +923082676942</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+
+
+        <!-- cursor -->
+        <div class="cursor"></div>
+        <!-- wrapped end -->
+    </div>
+
+
+    <!-- contact form -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendMessage(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var subject = $("#subject").val();
+            var message = $("#message").val();
+            var Body = "Name: "+name+"<br>Email: "+email+"<br>Subject: "+subject+"<br>Message: "+message;
+            console.log(message)
+
+        Email.send({
+           SecureToken : "899b1dc3-d71c-4041-861c-6af6a4fc815f",
+           To: 'jafferycoder@gmail.com',
+           From: email,
+           Subject: "Portfolio Mail From:"+name,
+           Body: Body
+       }).then(
+           message => 
+           {
+               if(message == 'OK'){
+                   alert("Thanks For Message ! I will respond you within 6 Hour");
+               }else{
+                   console.error(message)
+                   alert("There is error or Some issue. Try Again or later ")
+               }
+           }
+       );
+        }
+
+    </script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- div animation script link -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1500,
+        });
+    </script>
+    <script>
+        // cursor
+        const cursor = document.querySelector(".cursor");
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+        })
+        // preloader
+        let loader = document.getElementById("loader");
+        function Perloader() {
+            loader.style.display = 'none';
+        }
+        // Scroll Up
+
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
